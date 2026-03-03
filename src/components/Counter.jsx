@@ -1,16 +1,23 @@
-// * ESTADO / STATE
-import { useState } from "react";
+import './counter.css'
+import { useState, useEffect } from "react";
 
 export default function Counter(){
   const [ cantidad, setCantidad ] = useState(1)
+
+  // * Controlar CUANDO se ejecuta este efecto/tarea
+  useEffect( () => {
+    console.log("👇🏻filtro de productos - montaje")
+  }, [] )
   
-  // ? 1. Quiero que react RECUERDE este valor (memoria)
-  // ? 2. Quiero que react actualice el DOM cuando ese valor cambie
+
+  console.log("📌 0. Render del componente") 
+
+   
 
   function restar(){
     // TODO: validar nums negativos (min 1)
     console.log("Click en restar")
-    setCantidad( cantidad - 1) 
+    setCantidad( cantidad - 1) // renderiza de nuevo -> Counter(...)
   }
 
   function sumar(){
@@ -20,11 +27,14 @@ export default function Counter(){
   }
 
   return(
-    <div>
-      <p>Agregar al carrito</p>
-      <button onClick={ restar } >-</button>
-      { cantidad }
-      <button onClick={ sumar } >+</button>
+    <div className="counter-container">
+      <p className="counter-label">Agregar al carrito</p>
+      <div className="counter-controls">
+        <button className="counter-btn" onClick={ restar } >-</button>
+        <span className="counter-number">{ cantidad }</span>
+        <button className="counter-btn" onClick={ sumar } >+</button>    
+      </div>
+          <button className="btn-primary btn-full">Comprar</button>
     </div>
   )
 }

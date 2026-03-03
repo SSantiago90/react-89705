@@ -1,15 +1,43 @@
 import './App.css';
 import Card from './components/Card'
+import products from './data/products'
+import getProducts from './data/promise'
 
+// * Hardcodeado - Hardcoded
 function App() { 
+
+  getProducts().then(
+    (response) => { 
+      alert("Recibimos los datos")
+      console.log("Datos recibidos:", response)
+    }
+  ).catch( (error) => alert(error) )
+  
+
   return (
   <section>      
-      <h1>Bienvenidos a mi tienda!</h1>      
+      <h1>Bienvenidos a mi tienda!</h1> 
       <div>
         <h3>Estos son nuestos productos</h3>
-        <Card title="Remera Coderhouse" price={99} img="https://shop.guantexindustrial.com.ar/710-large_default/-remera-algodon-jersey-blanco-talle-xxl.jpg" />
-        <Card title="Remera HouseCoder" price={80} img="https://shop.guantexindustrial.com.ar/710-large_default/-remera-algodon-jersey-blanco-talle-xxl.jpg" />
-        <Card title="Remera React" price={70} img="https://shop.guantexindustrial.com.ar/710-large_default/-remera-algodon-jersey-blanco-talle-xxl.jpg" />
+        <div className="item-list"> 
+            
+            {
+                products.map( prod=> <Card 
+                  key={prod.id}
+                  img={prod.img} 
+                  title={prod.title} 
+                  price={prod.price}/> 
+                )
+            } 
+
+            <ul>
+              {
+                ["Hola", "React", "Coderhouse"].map( 
+                  item => <li>{item}</li> 
+                )
+              }
+            </ul>
+        </div>
       </div>
   </section>
   )
