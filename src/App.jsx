@@ -1,45 +1,27 @@
 import './App.css';
-import Card from './components/Card'
-import products from './data/products'
-import getProducts from './data/promise'
+import ItemDetail from './components/ItemDetail';
+import ItemListContainer from './components/ItemListContainer';
+import { BrowserRouter, Routes, Route } from 'react-router';
+import NavBar from './components/NavBar';
 
-// * Hardcodeado - Hardcoded
-function App() { 
-
-  getProducts().then(
-    (response) => { 
-      alert("Recibimos los datos")
-      console.log("Datos recibidos:", response)
-    }
-  ).catch( (error) => alert(error) )
-  
-
+function App() {   
   return (
-  <section>      
-      <h1>Bienvenidos a mi tienda!</h1> 
-      <div>
-        <h3>Estos son nuestos productos</h3>
-        <div className="item-list"> 
-            
-            {
-                products.map( prod=> <Card 
-                  key={prod.id}
-                  img={prod.img} 
-                  title={prod.title} 
-                  price={prod.price}/> 
-                )
-            } 
+    <BrowserRouter>
+        <NavBar/>
+        <h1>Bienvenidos a mi tienda!</h1>          
 
-            <ul>
-              {
-                ["Hola", "React", "Coderhouse"].map( 
-                  item => <li>{item}</li> 
-                )
-              }
-            </ul>
-        </div>
-      </div>
-  </section>
+        <Routes>
+          <Route path="/" element={ <ItemListContainer/> } />
+          <Route path="/category/:categoryID" element={ <ItemListContainer/> } />
+          
+          <Route path="/product/:id" element= { <ItemDetail /> } />
+          <Route path="*" element= { <h2>Not found: 404</h2>} />
+        </Routes>
+
+        <footer><small>Soy un futer</small></footer>
+        
+
+    </BrowserRouter>
   )
   
 }
