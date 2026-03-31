@@ -1,0 +1,53 @@
+.counter-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  background-color: var(--footer-bg);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  margin: 1rem 0;
+}
+
+.counter-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 140px;
+  margin: 0 auto;
+}
+
+.counter-btn {
+  width: 36px;
+  height: 36px;
+  /* Centrado absoluto */
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  
+  padding: 0; /* Eliminado padding manual */
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  background-color: var(--modal-bg);
+  color: var(--accent);
+  font-size: 1.5rem;
+  line-height: 1; /* Valor 1 para evitar desplazamientos de línea */
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.counter-btn:hover {
+  background-color: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
+.counter-number {
+  font-family: inherit;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-main);
+  min-width: 30px;
+  text-align: center;
+}
