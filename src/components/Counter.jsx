@@ -1,7 +1,7 @@
 import './counter.css'
 import { useState, useEffect } from "react";
 
-export default function Counter(){
+export default function Counter({ handleAddToCart }){
   const [ cantidad, setCantidad ] = useState(1)
 
   // * Controlar CUANDO se ejecuta este efecto/tarea
@@ -34,7 +34,7 @@ export default function Counter(){
         <span className="counter-number">{ cantidad }</span>
         <button className="counter-btn" onClick={ sumar } >+</button>    
       </div>
-          <button className="btn-primary btn-full">Comprar</button>
+          <button onClick={ () => handleAddToCart(cantidad) } className="btn-primary btn-full">Comprar</button>
     </div>
   )
 }
