@@ -1,18 +1,20 @@
 import { useContext } from "react";
 import cartContext from "../context/cartContext";
 import { ShoppingBasket } from "lucide-react";
+import { Link } from "react-router";
 
-function CartWidget(){
-  const { countItemsInCart } = useContext(cartContext)  
+function CartWidget() {
+  const { countItemsInCart } = useContext(cartContext);
+  const totalItems = countItemsInCart();
 
   return (
-    <div>     
-      <p> 
-        <ShoppingBasket color="#d09cf5" />
-        <span>( { countItemsInCart() } )</span>
-      </p>
+    <Link to="/cart">
+    <div className="cart-widget">
+      <ShoppingBasket className="cart-icon" size={28} color="#d09cf5" />    
+        <span className="cart-badge">{totalItems}</span>    
     </div>
-  )
+    </Link>
+  );
 }
 
 export default CartWidget;

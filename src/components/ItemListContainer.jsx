@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import getProducts, { getProductByCategory } from "../data/promise";
+import { getProducts, getProductByCategory } from "../data/firestore";
+
 import Card from "./Card";
 import { useParams } from "react-router";
 function ItemListContainer(){

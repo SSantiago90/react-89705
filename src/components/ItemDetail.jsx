@@ -2,7 +2,7 @@ import './itemDetail.css';
 import Counter from './Counter';
 import { useParams } from 'react-router';
 import { useContext, useEffect, useState } from 'react';
-import { getProductByID } from '../data/promise';
+import { getProductByID } from '../data/firestore';
 import cartContext from '../context/cartContext';
 
 

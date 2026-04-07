@@ -1,53 +1,65 @@
 .counter-container {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  padding: 16px;
-  background-color: var(--footer-bg);
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--border-color);
-  margin: 1rem 0;
+  align-items: center; /* Centra horizontalmente todos los hijos */
+  justify-content: center;
+  gap: 20px;
+  padding: 24px;
+  background-color: #1a1a1a; /* Color oscuro similar a la imagen */
+  border-radius: 12px;
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+.counter-label {
+  margin: 0;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 1rem;
 }
 
 .counter-controls {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center; /* Centra los botones y el número */
+  gap: 25px;
   width: 100%;
-  max-width: 140px;
-  margin: 0 auto;
+  padding: 10px;
+  background-color: #242424;
+  border-radius: 8px;
 }
 
 .counter-btn {
-  width: 36px;
-  height: 36px;
-  /* Centrado absoluto */
-  display: flex;
-  align-items: center; 
-  justify-content: center;
-  
-  padding: 0; /* Eliminado padding manual */
-  border-radius: 6px;
-  border: 1px solid var(--border-color);
-  background-color: var(--modal-bg);
-  color: var(--accent);
+  background: none;
+  border: none;
+  color: #4f6cf6; /* Azul similar al botón */
   font-size: 1.5rem;
-  line-height: 1; /* Valor 1 para evitar desplazamientos de línea */
   cursor: pointer;
-  transition: all var(--transition);
+  padding: 5px 15px;
+  transition: opacity 0.2s;
 }
 
-.counter-btn:hover {
-  background-color: var(--accent);
-  color: white;
-  border-color: var(--accent);
+.counter-btn:disabled {
+  color: #444;
+  cursor: not-allowed;
 }
 
 .counter-number {
-  font-family: inherit;
+  color: white;
   font-size: 1.2rem;
-  font-weight: 600;
-  color: var(--text-main);
-  min-width: 30px;
+  font-weight: bold;
+  min-width: 20px;
   text-align: center;
+}
+
+.btn-buy {
+  width: 100%;
+  max-width: 200px; /* Evita que el botón sea excesivamente largo */
+  padding: 12px;
+  background-color: #3b5bdb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
 }

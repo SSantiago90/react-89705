@@ -71,3 +71,24 @@
 .btn-primary:active {
   transform: scale(0.98);
 }
+
+/* 1. Nuevo contenedor para el botón */
+.card-actions {
+  display: flex;
+  justify-content: center;
+  padding: 0 1.25rem 1.25rem 1.25rem; /* Alineado con el padding de card-body */
+}
+
+/* 2. Ajuste al botón para que no ocupe todo el ancho */
+.btn-primary {
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  padding: 10px 20px; /* Agregamos padding horizontal */
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  width: fit-content; /* CAMBIO: De 100% a fit-content para permitir el centrado */
+  transition: background-color var(--transition), transform 0.1s;
+}

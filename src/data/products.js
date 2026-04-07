@@ -1,4 +1,8 @@
 const products = [
+
+
+
+  
   {
     id: 1,
     title: "Remera ReactJS",
@@ -8,6 +12,10 @@ const products = [
     description: "Remera de ReactJS",
     stock: 10
   },
+
+
+
+
    {
     id: 2,
     title: "Remera MySQL",

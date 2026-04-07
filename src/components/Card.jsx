@@ -12,12 +12,10 @@ function Card({ id, title, img, price }) {
             
             <div className="card-body">
               <h3 className="card-title">{title}</h3>
-              <p className="card-price">${price}</p>
-              
+              <p className="card-price">${price}</p>              
               <div className="card-actions">
-                <Counter />
+                <button className="btn-primary">Ver detalle</button>
               </div>
-                <button>Ver detalle</button>
             </div>
         </Link>
     </div>
